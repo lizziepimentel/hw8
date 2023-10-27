@@ -1,13 +1,18 @@
-Fetch Meow Facts 
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch Meow Facts</title>
+    <style>
         body {
-            background-color: #ffe5cc; /* Light orange background */
+            background-color: lightcoral;
             font-family: 'Arial', sans-serif;
             text-align: center;
             margin-top: 50px;
         }
 
         button {
-            background-color: #4CAF50; /* Green button color */
+            background-color: mediumseagreen;
             color: white;
             padding: 10px 20px;
             font-size: 16px;
@@ -17,11 +22,15 @@ Fetch Meow Facts
         }
 
         button:hover {
-            background-color: #45a049; /* Darker green on hover */
+            background-color: darkgreen;
         }
-    Fetch Meow Fact
+    </style>
+</head>
 
+<body>
+    <button onclick="fetchMeowFact()">Fetch Meow Fact</button>
 
+    <script>
         function fetchMeowFact() {
             fetch('https://meowfacts.herokuapp.com/')
                 .then(response => response.json())
@@ -31,3 +40,6 @@ Fetch Meow Facts
                 })
                 .catch(error => console.error("Error fetching meow fact: ", error));
         }
+    </script>
+</body>
+</html>
