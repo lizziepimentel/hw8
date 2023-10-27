@@ -1,18 +1,23 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
-	<script>
-		fetch('https://random-d.uk/api') 
-		.then(response => response.json())
-		.then(data => {
-			console.log(data);
-		})
-		.catch(error => console.error("Error fetching random duck data: ", error));
-	</script>
+    <meta charset="UTF-8">
+    <title>Fetch Meow Facts</title>
 </head>
 
 <body>
+    <button onclick="fetchMeowFact()">Fetch Meow Fact</button>
+
+    <script>
+        function fetchMeowFact() {
+            fetch('https://meowfacts.herokuapp.com/')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    alert(data.data); // Assuming the response has a 'data' property with the meow fact
+                })
+                .catch(error => console.error("Error fetching meow fact: ", error));
+        }
+    </script>
 </body>
 </html>
